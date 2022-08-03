@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import Usuario from './componentes/Usuario';
+import FormularioInicioSession from './componentes/FormularioInicioSesion';
 
 /* Componente APP */
 const App = () => {
-  const [session, cambiarEstadoSesion] = useState(true);
+  const [session, cambiarEstadoSesion] = useState(false);
 
   return(
     <>
@@ -16,7 +17,8 @@ const App = () => {
       :
       <>
       <p>Noo has iniciado Sesion!!</p> 
-      <button onClick={() => cambiarEstadoSesion(true)} >Iniciar Sesión</button>
+      <FormularioInicioSession />
+      {/* <button onClick={() => cambiarEstadoSesion(true)} >Iniciar Sesión</button> */}
       </> 
       }
   </>
