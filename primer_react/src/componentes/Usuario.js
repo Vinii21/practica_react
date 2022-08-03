@@ -1,5 +1,5 @@
 import React from 'react';
-import { TituloAzul, TituloRojo } from './Titulo';
+import { Titulo } from './Titulo';
 
 /* Componente de React */
 const Usuario = () => {
@@ -9,8 +9,8 @@ const Usuario = () => {
 
     return(
       <>
-        <TituloRojo />
-        <TituloAzul />
+        <Titulo nombre = 'Agustin' color = 'green' />
+        <Titulo nombre = 'Fabian' color = 'blue' />
         <p>Todo cool, todo bien</p>
         {pais && <p>Tu país es: {pais}</p>}
         {manzanas && <p>La catidad de tus manzanas es: {manzanas}, y eso es cool</p>}

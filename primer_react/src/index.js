@@ -11,7 +11,6 @@ const App = () => {
       {session === true ? 
       <>
       <Usuario />
-      <Usuario />
     </>
     : <p>Noo has iniciado Sesion!!</p> }
   </>
