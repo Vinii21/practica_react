@@ -1,19 +1,40 @@
 import React, {useState} from 'react';
 
-const FormularioInicioSession = () => {
+const FormularioInicioSession = (props) => {
     const [usuario, cambiarUsuario] = useState('');
     const [password, cambiarPassword] = useState('');
 
-    const onChangeUsuario = (evento) => {
+    /* const onChangeUsuario = (evento) => {
         cambiarUsuario(evento.target.value);
-    };
+    }; */
 
-    const onChangePassword = (evento) => {
+    /* const onChangePassword = (evento) => {
         cambiarPassword(evento.target.value);
+    }; */
+
+    const onChange = (evento) => {
+        if(evento.target.name === 'usuario'){
+            cambiarUsuario(evento.target.value);  
+        }
+        if(evento.target.name === 'password'){
+            cambiarPassword(evento.target.value);  
+        }
+    };
+    const onSubmit = (evento) => {
+        evento.preventDefault();/* Esto, impide que se recargue la pagina */
+        if (usuario === 'Vinicio' && password === '123'){ /* solo se neceista una facil validadcion */
+            props.cambiarEstadoSesion(true);
+        } else if(usuario === '' && password === '') {
+            alert('Ingresa datos en los input')
+        } else {
+            alert('Datos incorrectos')
+            cambiarUsuario('');
+            cambiarPassword('');
+        }
     };
 
-    return (
-        <form action=''>
+    return (/* no quiero que vuela a refrescar la pagina */
+        <form action='' onSubmit={onSubmit}> 
             <p>Usuario: {usuario}</p>
             <p>Contraseña: {password}</p>
             <div>
@@ -23,7 +44,7 @@ const FormularioInicioSession = () => {
                 name="usuario" 
                 id="usuario"
                 value={usuario}
-                onChange={onChangeUsuario}
+                onChange={onChange}
                 />
             </div>
             <div>
@@ -33,7 +54,7 @@ const FormularioInicioSession = () => {
                 name="password" 
                 id="password"
                 value={password}
-                onChange={onChangePassword}
+                onChange={onChange}
                 />
             </div>
             <button type="submit">Iniciar sesion</button>

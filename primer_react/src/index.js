@@ -17,7 +17,7 @@ const App = () => {
       :
       <>
       <p>Noo has iniciado Sesion!!</p> 
-      <FormularioInicioSession />
+      <FormularioInicioSession cambiarEstadoSesion={cambiarEstadoSesion} />
       {/* <button onClick={() => cambiarEstadoSesion(true)} >Iniciar Sesión</button> */}
       </> 
       }
