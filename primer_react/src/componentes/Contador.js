@@ -1,18 +1,25 @@
 import React, {useState} from "react";
 
-const Contador = () => {
+const Contador = (props) => {
+    /* Hook useState */
     const [contador, cambiarContador] = useState(0);
 
+    /* Propiedades, props */
+    const cantidadAIncrementar = props.cantidadAIncrementar;
+    const cantidadADisminuir= props.cantidadADisminuir;
 
+    /* Funcion que cambia el useState */
     const matematica = (evento) => {
         if(evento.target.name === 'mas'){
-            cambiarContador(contador + 1)
+            cambiarContador(contador + cantidadAIncrementar)
         }
         if(evento.target.name === 'menos'){
-            cambiarContador(contador - 1)
+            cambiarContador(contador - cantidadADisminuir)
         }
     }
 
+
+    /* El Render de nuestro componente funcional */
     return (
         <div>
             <h1>Contador funcional: {contador}</h1>
