@@ -4,14 +4,6 @@ const FormularioInicioSession = (props) => {
     const [usuario, cambiarUsuario] = useState('');
     const [password, cambiarPassword] = useState('');
 
-    /* const onChangeUsuario = (evento) => {
-        cambiarUsuario(evento.target.value);
-    }; */
-
-    /* const onChangePassword = (evento) => {
-        cambiarPassword(evento.target.value);
-    }; */
-
     const onChange = (evento) => {
         if(evento.target.name === 'usuario'){
             cambiarUsuario(evento.target.value);  
