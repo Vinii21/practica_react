@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './FormularioIniciSesion.css';
 
 const FormularioInicioSession = (props) => {
     const [usuario, cambiarUsuario] = useState('');
@@ -26,30 +27,33 @@ const FormularioInicioSession = (props) => {
     };
 
     return (/* no quiero que vuela a refrescar la pagina */
-        <form action='' onSubmit={onSubmit}> 
+        <form action='' onSubmit={onSubmit} className="formulario"> 
+            <h1>Noo has iniciado Sesion!!</h1> 
             <p>Usuario: {usuario}</p>
             <p>Contraseña: {password}</p>
             <div>
-                <label htmlFor="usuario">Usuario</label>
+                <label htmlFor="usuario" className="label">Usuario</label>
                 <input 
                 type="text" 
                 name="usuario" 
                 id="usuario"
                 value={usuario}
                 onChange={onChange}
+                className="input"
                 />
             </div>
             <div>
-                <label htmlFor="password">Contraseña</label>
+                <label htmlFor="password" className="label">Contraseña</label>
                 <input 
                 type="password"
                 name="password" 
                 id="password"
                 value={password}
                 onChange={onChange}
+                className="input"
                 />
             </div>
-            <button type="submit">Iniciar sesion</button>
+            <button className="boton" type="submit">Iniciar sesion</button>
         </form>
     );
 }

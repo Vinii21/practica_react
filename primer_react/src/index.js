@@ -4,13 +4,14 @@ import Usuario from './componentes/Usuario';
 import FormularioInicioSession from './componentes/FormularioInicioSesion';
 /* import ContadorClass from './componentes/ContadorClass'; */
 import Contador from './componentes/Contador';
+import './index.css';
 
 /* Componente APP */
 const App = () => {
-  const [session, cambiarEstadoSesion] = useState(true);
+  const [session, cambiarEstadoSesion] = useState(false);
 
   return(
-    <>
+    <div className="contenedor">
       {session === true ? 
       <>
         <Usuario />
@@ -22,12 +23,11 @@ const App = () => {
       </>
       :
       <>
-      <p>Noo has iniciado Sesion!!</p> 
       <FormularioInicioSession cambiarEstadoSesion={cambiarEstadoSesion} />
       {/* <button onClick={() => cambiarEstadoSesion(true)} >Iniciar Sesión</button> */}
       </> 
       }
-  </>
+    </div>
   );
 };
 

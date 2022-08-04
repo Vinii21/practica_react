@@ -6,6 +6,18 @@ class Contador extends Component {/* Se debe extender component, estos se trea d
         this.state = { contador: 0 }
     }
 
+    componentDidCatch(){
+        /* Ejecuta cuando el componente se monta, se carga */
+    }
+
+    componentDidUpdate(){
+        /* Ejecuta cuando el componente se actualiza */
+    }
+
+    componentWillUnmount(){
+        /* Se ejecuta cuando el componente se desmonta */
+    }
+
     incrementar(cantidad){
         this.setState((estadoAnterior) => {
             return {
