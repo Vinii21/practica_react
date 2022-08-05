@@ -5,10 +5,11 @@ import FormularioInicioSession from './componentes/FormularioInicioSesion';
 /* import ContadorClass from './componentes/ContadorClass'; */
 import Contador from './componentes/Contador';
 import './index.css';
+import Boton from './elementos/Boton';
 
 /* Componente APP */
 const App = () => {
-  const [session, cambiarEstadoSesion] = useState(false);
+  const [session, cambiarEstadoSesion] = useState(true);
 
   return(
     <div className="contenedor">
@@ -19,7 +20,7 @@ const App = () => {
         <hr/>
         <Contador cantidadAIncrementar ={10} cantidadADisminuir={2} />
         <hr/>
-        <button onClick={() => cambiarEstadoSesion(false)} >Cerrar Sesión</button>
+        <Boton onClick={() => cambiarEstadoSesion(false)} >Cerrar Sesión</Boton>
       </>
       :
       <>

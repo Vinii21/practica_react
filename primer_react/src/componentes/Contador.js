@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Boton from "./../elementos/Boton";
 
 const Contador = (props) => {
     /* Hook useState */
@@ -23,8 +24,8 @@ const Contador = (props) => {
     return (
         <div>
             <h1>Contador funcional: {contador}</h1>
-            <button name="mas" onClick={matematica}>Más</button>
-            <button name="menos" onClick={matematica}>Menos</button>
+            <Boton name="mas" onClick={matematica}>Más</Boton>
+            <Boton name="menos" onClick={matematica}>Menos</Boton>
         </div>
     );
 }

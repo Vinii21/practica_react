@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import './FormularioIniciSesion.css';
+import styled from 'styled-components';
+import Boton from './../elementos/Boton';
 
 const FormularioInicioSession = (props) => {
     const [usuario, cambiarUsuario] = useState('');
@@ -27,13 +28,13 @@ const FormularioInicioSession = (props) => {
     };
 
     return (/* no quiero que vuela a refrescar la pagina */
-        <form action='' onSubmit={onSubmit} className="formulario"> 
+        <Formulario action='' onSubmit={onSubmit}> 
             <h1>Noo has iniciado Sesion!!</h1> 
             <p>Usuario: {usuario}</p>
             <p>Contraseña: {password}</p>
             <div>
-                <label htmlFor="usuario" className="label">Usuario</label>
-                <input 
+                <Label htmlFor="usuario">Usuario</Label>
+                <Input 
                 type="text" 
                 name="usuario" 
                 id="usuario"
@@ -43,8 +44,8 @@ const FormularioInicioSession = (props) => {
                 />
             </div>
             <div>
-                <label htmlFor="password" className="label">Contraseña</label>
-                <input 
+                <Label htmlFor="password">Contraseña</Label>
+                <Input 
                 type="password"
                 name="password" 
                 id="password"
@@ -53,9 +54,33 @@ const FormularioInicioSession = (props) => {
                 className="input"
                 />
             </div>
-            <button className="boton" type="submit">Iniciar sesion</button>
-        </form>
+            <Boton type="submit">Iniciar sesion</Boton>
+        </Formulario>
     );
+
 }
+
+/* styled components */
+
+const Formulario = styled.form`
+    display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 20px;
+	margin: 20px 0 0 0;
+`;
+
+const Input = styled.input`
+    width: 100%;
+	padding: 10px;
+	border: 2px solid #d1d1d1;
+	border-radius: 3px;
+`;
+
+const Label = styled.label`
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+`;
  
 export default FormularioInicioSession;
