@@ -6,6 +6,7 @@ import FormularioInicioSession from './componentes/FormularioInicioSesion';
 import Contador from './componentes/Contador';
 import './index.css';
 import Boton from './elementos/Boton';
+import EjemploUseReduce from './componentes/EjemploUseReduce';
 
 /* Componente APP */
 const App = () => {
@@ -18,9 +19,9 @@ const App = () => {
         <Usuario />
         {/* <ContadorClass cantidadAIncrementar ={10} cantidadADisminuir={2} /> */}
         <hr/>
-        <Contador cantidadAIncrementar ={10} cantidadADisminuir={2} />
-        <hr/>
-        <Boton onClick={() => cambiarEstadoSesion(false)} >Cerrar Sesión</Boton>
+        {/* <Contador cantidadAIncrementar ={10} cantidadADisminuir={2} /> */}
+        <EjemploUseReduce />
+        <Boton largo marginTop onClick={() => cambiarEstadoSesion(false)} >Cerrar Sesión</Boton>
       </>
       :
       <>

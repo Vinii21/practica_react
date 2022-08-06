@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Boton = styled.button`
     background: #83d394;
@@ -10,11 +10,27 @@ const Boton = styled.button`
 	font-family: Arial, sans-serif;
 	cursor: pointer;
 	transition: .3s ease all;
+	width: ${props => props.largo ? '100%' : 'auto'};
 
 	&:hover {
 		background: #44a559;
 		color: #fff;
 	}
+
+	${props => props.black && css`
+		background: #000;
+		color: #fff;
+	`}
+
+	${props => props.marginTop && css`
+		margin-top: 10px;
+	`}
+
+	${props => props.marginRight && css`
+		margin-right: 5px;
+	`}
+
+
 `;
 
 export default Boton;

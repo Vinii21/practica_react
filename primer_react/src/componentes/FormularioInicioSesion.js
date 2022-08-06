@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import Boton from './../elementos/Boton';
 
 const FormularioInicioSession = (props) => {
@@ -44,7 +44,7 @@ const FormularioInicioSession = (props) => {
                 />
             </div>
             <div>
-                <Label htmlFor="password">Contraseña</Label>
+                <Label purple htmlFor="password">Contraseña</Label>
                 <Input 
                 type="password"
                 name="password" 
@@ -81,6 +81,11 @@ const Label = styled.label`
     font-size: 14px;
     display: block;
     margin-bottom: 5px;
+
+    ${props => props.purple && css`
+        color: #f4f;
+        font-size: 18px;
+    `}
 `;
  
 export default FormularioInicioSession;
