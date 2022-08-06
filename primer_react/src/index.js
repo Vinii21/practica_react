@@ -7,6 +7,7 @@ import Contador from './componentes/Contador';
 import './index.css';
 import Boton from './elementos/Boton';
 import EjemploUseReduce from './componentes/EjemploUseReduce';
+import Blog from './componentes/Blog';
 
 /* Componente APP */
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         {/* <ContadorClass cantidadAIncrementar ={10} cantidadADisminuir={2} /> */}
         <hr/>
         {/* <Contador cantidadAIncrementar ={10} cantidadADisminuir={2} /> */}
+        < Blog />
         <EjemploUseReduce />
         <Boton largo marginTop onClick={() => cambiarEstadoSesion(false)} >Cerrar Sesión</Boton>
       </>
