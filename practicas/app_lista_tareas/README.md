@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+<aside>
+⚠️ Desde el principio del curso hasta los hooks personalizados.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</aside>
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+<aside>
+💡 Una pequeña app para administrar tareas, tendremos un formulario donde describiremos lo que queremos crear, podremos editar las tareas que creamos. También crearemos un botón para que no se muestren las tareas completadas. Oviamente tambipen las podemos volver a mostrar. También vamos a poder guardar los datos en el navegador, en el localStorage, para no perder los datos si regargamos.
 
-### `npm start`
+</aside>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Lo primero que debemos hacer es ubicarnos en donde queremos crear la carpeta de nuestro proyecto, yo uso una carpeta llamada practicas. Ahí dentro ejecutamos el comando:
 
-### `npm test`
+`npx create-react-app app_lista_tareas`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este comando lo ejecutamos en nuestra consola de GitBash, en el luagr donde crearemos el proyecto. Tarda unos minutos.
 
-### `npm run build`
+- Una vez que termine, debemos hacer un poco de limpieza, entonces nos dirigimos a la carpeta source, y dejamos solo los archivos .js y .css
+- Luego, abrimos todo el proyecto en nuestro editor de código y en el index.js hacemos limpieza.
+    - Queda de la siguiente manera
+        
+        ```jsx
+        import React from 'react';
+        import ReactDOM from 'react-dom/client';
+        import './index.css';
+        import App from './App';
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        );
+        ```
+        
+- También hago limpieza en archivo App.js.
+    - Queda de la siguiente manera
+        
+        ```jsx
+        import './App.css';
+        
+        const App = () => {
+          return (
+            <div>
+              <h1>Hola Mundo</h1>
+            </div>
+          );
+        }
+        
+        export default App;
+        ```
+        
+- A su vez, limpiamos los archivos css borrando todo su contenido, porque queremos agregar nuestros propios estilos CSS.
+    - Agregamos estilos generales del index.css
+        
+        ```jsx
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+        
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        #root {
+          width: 100%;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          padding: 50px 0;
+        }
+        
+        body {
+          font-family: 'Roboto', sans-serif;
+        }
+        ```
+        
+    - Agregamos estilos generales del App.js
+        
+        ```jsx
+        :root {
+        	--verde: #80BE4E;
+        	--azul: #007AEA;
+        }
+        
+        .contenedor {
+        	max-width: 700px;
+        	width: 100%;
+        	height: 100%;
+        	max-height: 90vh;
+        	overflow: auto;
+        	box-shadow: 0 2px 10px rgba(139,139,139,.25);
+        	border-radius: 3px;
+        	display: grid;
+        	grid-template-rows: auto auto 1fr;
+        }
+        ```
+        
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Ya estamos listo para ejecutar npm start en la consola, y empezar a crear nuestro proyecto**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
